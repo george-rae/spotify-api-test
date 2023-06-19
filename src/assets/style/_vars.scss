@@ -1,0 +1,50 @@
+// UTLITIES
+.max-width {
+  width: clamp(300px, 100%, 1280px);
+}
+
+// FUNCTIONS/MIXINS
+
+@mixin flex-x($justify: false, $align: false, $wrap: false) {
+  display: flex;
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin flex-y($justify: false, $align: false, $wrap: false) {
+  @include flex-x($justify, $align, $wrap);
+  flex-direction: column;
+}
+
+@mixin absolute-fill() {
+  @include position(0);
+}
+
+@mixin circle($dimensions) {
+  height: $dimensions;
+  width: $dimensions;
+
+  border-radius: 50%;
+}
+
+// -- SPACING/GRID
+$spacing-xs: 6px;
+$spacing-sm: 12px;
+$spacing-md: 24px;
+$spacing-lg: 36px;
+$spacing-xl: 48px;
+
+// --- COLOURS
+
+$colour-green: #1db954;
+$colour-grey-80: #121212;
+$colour-grey-70: #212121;
+$colour-grey-40: #535353;
+$colour-grey-20: #b3b3b3;
